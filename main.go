@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math"
-	"os"
 )
 
 // Gravitational wave strain amplitude
@@ -12,9 +11,9 @@ func h(t, f, D float64) float64 {
 	G := 6.67430e-11  // Gravitational constant (m³ kg⁻¹ s⁻²)
 	c := 2.99792458e8 // Speed of light (m/s)
 	
-	const M_chirp = 30.0 // Chirp mass in solar masses
-	M_solar := 1.989e30 // Solar mass in kg
-	M := M_chirp * M_solar
+	const M_chirp = 30.0      // Chirp mass in solar masses
+	M_solar := 1.989e30      // Solar mass in kg
+	M := M_chirp * M_solar    // Mass in kg
 	
 	prefactor := 4 * math.Pow(math.Pi, 2) * G / math.Pow(c, 4)
 	amplitude := prefactor * M * math.Pow(f, 5.0/3.0)
@@ -32,9 +31,9 @@ func polarizations(t, f, D, phi float64) (hp, hx float64) {
 // Strain at detector from binary inspiral
 func detectorStrain(t float64) float64 {
 	// LIGO parameters
-	f0 := 150.0     // Initial frequency (Hz)
-	M := 60.0       // Total mass in solar masses
-	D := 400e6      // Distance in parsecs
+	f0 := 150.0  // Initial frequency (Hz)
+	_ = f0
+	D := 400e6  // Distance in parsecs
 	
 	// Frequency evolution during inspiral
 	f := f0 * math.Pow(1-t/10.0, -3.0/8.0)
