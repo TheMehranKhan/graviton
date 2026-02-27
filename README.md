@@ -34,11 +34,28 @@ Where $\iota$ is the inclination angle of the binary plane.
 
 ```bash
 go run main.go
+go run main.go -m1 10 -m2 10 -d 200 -i 30 -t 15
 ```
 
-## Output
+### Parameters
 
-ASCII visualization of gravitational wave strain over time, simulating LIGO detection of a binary black hole merger.
+| Flag | Default | Description |
+|------|---------|-------------|
+| `-m1` | 30 | Mass of first body (solar masses) |
+| `-m2` | 30 | Mass of second body (solar masses) |
+| `-d` | 400 | Distance (Mpc) |
+| `-i` | 0 | Inclination angle (degrees) |
+| `-t` | 10 | Duration (seconds) |
+| `-fps` | 10 | Frames per second |
+
+### Output
+
+ASCII visualization of gravitational wave strain over time, simulating LIGO detection of a binary black hole merger with:
+- Plus (+) polarization mode
+- Cross (×) polarization mode  
+- Chirp mass calculation
+- Inspiral frequency evolution
+- Phase indicator (inspiral/merger/ringdown)
 
 ## References
 
